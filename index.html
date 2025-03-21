@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中幕建铝</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+        header {
+            background-color: #0056b3;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 24px;
+            font-weight: bold;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 80px 20px 20px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 86, 179, 0.2);
+        }
+        .gallery-item {
+            border: 1px solid #0056b3;
+            padding: 10px;
+            border-radius: 8px;
+            transition: transform 0.3s;
+            background: #e6f2ff;
+            text-align: center;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .product-name {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #0056b3;
+        }
+        .section {
+            margin-top: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 86, 179, 0.2);
+        }
+        footer {
+            background-color: #0056b3;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+        }
+        .modal-content {
+            margin: 10% auto;
+            display: block;
+            max-width: 90%;
+        }
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>中幕建铝</header>
+    
+    <div class="container">
+        <div class="gallery">
+            <div class="gallery-item"><img src="仿木纹铝单板.png" alt="仿木纹铝单板" onclick="openModal(this)"><div class="product-name">仿木纹铝单板</div></div>
+            <div class="gallery-item"><img src="仿石纹铝单板.png" alt="仿石纹铝单板" onclick="openModal(this)"><div class="product-name">仿石纹铝单板</div></div>
+            <div class="gallery-item"><img src="仿铜拉丝铝单板.png" alt="仿铜拉丝铝单板" onclick="openModal(this)"><div class="product-name">仿铜拉丝铝单板</div></div>
+            <div class="gallery-item"><img src="蜂窝板.png" alt="蜂窝板" onclick="openModal(this)"><div class="product-name">蜂窝板</div></div>
+            <div class="gallery-item"><img src="镂空艺术板.png" alt="镂空艺术板" onclick="openModal(this)"><div class="product-name">镂空艺术板</div></div>
+            <div class="gallery-item"><img src="铝单板.png" alt="铝单板" onclick="openModal(this)"><div class="product-name">铝单板</div></div>
+            <div class="gallery-item"><img src="双曲艺术板.png" alt="双曲艺术板" onclick="openModal(this)"><div class="product-name">双曲艺术板</div></div>
+        </div>
+        
+        <div class="section">
+            <h2>工程案例</h2>
+            <p>公司已参与多个建筑项目，如南京龙湖天街、温州吾悦广场、苏州传媒大厦等，为客户提供优质的铝单板幕墙解决方案。</p>
+        </div>
+        
+        <div class="section">
+            <h2>联系我们</h2>
+            <p><strong>联系人：</strong>张经理</p>
+            <p><strong>电话：</strong>18862314327</p>
+            <p><strong>地址：</strong>江苏省常州市武进区横林新东方孟墅路8号</p>
+            <p><strong>邮箱：</strong>301845763@qq.com</p>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <footer>&copy; 2025 中幕建铝 版权所有</footer>
+
+    <script>
+        function openModal(img) {
+            document.getElementById("myModal").style.display = "block";
+            document.getElementById("img01").src = img.src;
+        }
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+    </script>
+</body>
+</html>
